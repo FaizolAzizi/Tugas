@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DESAIN WEB</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            background-color: blue;
+        }
+        
+    </style>
+    
+
+<div id="date-container"></div>
+<script>
+function showDateTo(elemID) {
+
+    var date = new Date();
+    var second = date.getSeconds();
+    var minute = date.getMinutes();
+    var hour = date.getHours();
+    var day = date.getDay();
+    var dayMonth = date.getDate();
+    var month = date.getMonth();
+    var year = date.getYear();
+
+    var dayArray = ["Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jum&#39;at", "Sabtu"];
+    var monthArray = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+
+    // Menambahkan angka nol di depan jika nilai kurang dari 10
+    if (second < 10) second = '0' + second;
+    if (minute < 10) minute = '0' + minute;
+    if (hour < 10) hour = '0' + hour;
+    if (dayMonth < 10) dayMonth = '0' + dayMonth;
+
+    if (year < 1000) year += 1900;
+
+    document.getElementById(elemID).innerHTML = dayArray[day] + ', ' + dayMonth + ' ' + monthArray[month] + ' ' + year + ' ' + hour + ':' + minute + ':' + second;
+}
+
+// Masukkan ke kontainer!
+// Pakai interval 1 detik sekali untuk efek animasi jam
+// (tanpa interval masih tetap bisa bekerja, tapi tidak akan ada efek animasi)
+setInterval(function() {
+    showDateTo('date-container');
+}, 1000);
+</script>
+</head>
+<body>
+	<body>
+  <marquee bgcolor:"black">TUGAS DESAIN WEB DIKUMPUL SEBELUM UTS </marquee>
+  
+ </body>
+	<div id="pagewrep"> 
+		<div id="header">RF ONLINE INDONESIA</div>
+
+	<div id="cont-l"><h4 align="center">List Donasi</h4>
+        
+        <marquee behavior="scroll" direction="down">
+    <div class="cont-menu">wepon 50C +7</div>
+    <div class="cont-menu">ARMOR TtipeB+5</div>
+    <div class="cont-menu">Shield 50B+6</div>
+    <div class="cont-menu">Change Nick</div>   
+    <div class="cont-menu">Pindah equip</div>
+    </marquee> 
+    </div>
+
+    <div id="slidedown"></div>
+
+		<div id="cont-m">
+        <div class="marquee">
+            <marquee>TUGAS DIKUMPULKAN SEBELUM UTS</marquee></div>
+		<div class="cont-video">
+        <video height="600px" width="960px" controls="">
+        <source src="RFINTRO.mp4" type="video/mp4"> 
+        </video>
+        </div>      
+        </div>
+		<div id="footer"><h3></h3></div>
+		<div style="clear:both"></div>
+	</div>
+</body>
+</html>
